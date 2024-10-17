@@ -25,4 +25,6 @@ WORKDIR /var/www/html
 # Donner les permissions nécessaires
 RUN chown -R www-data:www-data /var/www/html
 
+RUB  composer install
+
 SHELL ["/bin/bash", "-c"]
