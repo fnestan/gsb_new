@@ -4,11 +4,13 @@ namespace App\Controller;
 
 use App\Entity\Visiteur;
 use App\Service\JwtTokenGenerator;
+use App\Service\MailService;
 use Doctrine\ORM\EntityManagerInterface;
+use Random\RandomException;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
-use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\Mailer\Exception\TransportExceptionInterface;
 use Symfony\Component\Routing\Annotation\Route;
 
 #[Route('auth')]
@@ -31,10 +33,10 @@ class AuthController extends AbstractController
         $password = json_decode($request->getContent())->password;
         $visitor = $this->entityManager->getRepository(Visiteur::class)->findByVisitorByLoginAndPassword($login, $password);
         if (is_null($visitor)) {
-            return new JsonResponse(["data" => "Login ou mot de passe incorrecte"], 400);
+            return new JsonResponse(["error" => "Login ou mot de passe incorrecte"], 400);
         }
         $token = $this->tokenGenerator->generateToken(["id" => $visitor->getId(),
-             "login" => $visitor->getLogin()]);
+            "login" => $visitor->getLogin()]);
         $response = [
             "data" => $token
         ];

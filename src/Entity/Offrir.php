@@ -11,15 +11,15 @@ class Offrir
     #[ORM\Id]
     #[ORM\ManyToOne(targetEntity: Rapport::class)]
     #[ORM\JoinColumn(name: "idRapport", referencedColumnName: "id")]
-    private ?Rapport $rapport = null;
+    private Rapport $rapport;
 
     #[ORM\Id]
     #[ORM\ManyToOne(targetEntity: Medicament::class)]
     #[ORM\JoinColumn(name: "idMedicament", referencedColumnName: "id")]
-    private ?Medicament $medicament = null;
+    private Medicament $medicament;
 
     #[ORM\Column(type: "integer", nullable: true)]
-    private ?int $quantite = null;
+    private int $quantite ;
 
     // Getters and Setters
     public function getRapport(): ?Rapport

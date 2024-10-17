@@ -3,6 +3,7 @@
 namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 #[ORM\Table(name: "rapport")]
 #[ORM\Entity(repositoryClass: "App\Repository\RapportRepository")]
@@ -11,24 +12,26 @@ class Rapport
     #[ORM\Id]
     #[ORM\GeneratedValue]
     #[ORM\Column(type: "integer")]
-    private ?int $id = null;
+    private int $id;
 
     #[ORM\Column(type: "date", nullable: true)]
-    private ?\DateTimeInterface $date = null;
+    private \DateTimeInterface $date;
 
     #[ORM\Column(type: "string", length: 100, nullable: true)]
-    private ?string $motif = null;
+    private string $motif;
 
     #[ORM\Column(type: "string", length: 100, nullable: true)]
-    private ?string $bilan = null;
+    private string $bilan;
 
     #[ORM\ManyToOne(targetEntity: Visiteur::class)]
-    #[ORM\JoinColumn(name: "idVisiteur", referencedColumnName: "id")]
-    private ?Visiteur $visiteur = null;
+    #[ORM\JoinColumn(name: "idVisiteur",referencedColumnName: "id")]
+    #[Assert\NotNull]
+    private ?Visiteur $visiteur;
 
     #[ORM\ManyToOne(targetEntity: Medecin::class)]
     #[ORM\JoinColumn(name: "idMedecin", referencedColumnName: "id")]
-    private ?Medecin $medecin = null;
+    #[Assert\NotNull]
+    private ?Medecin $medecin;
 
     // Getters and Setters
 

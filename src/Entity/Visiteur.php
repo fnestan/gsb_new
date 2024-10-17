@@ -10,7 +10,7 @@ class Visiteur
 {
     #[ORM\Id]
     #[ORM\Column(type: "string", length: 4)]
-    private ?string $id = null;
+    private ?string $id;
 
     #[ORM\Column(type: "string", length: 30, nullable: true)]
     private ?string $nom = null;

@@ -25,4 +25,13 @@ class VisiteurRepository extends ServiceEntityRepository
             ->getQuery()
             ->getOneOrNullResult();
     }
+
+    public function findByVisitorByLogin(String $login)
+    {
+        return $this->createQueryBuilder('v')
+            ->Where('v.login = :login')
+            ->setParameter('login', $login)
+            ->getQuery()
+            ->getOneOrNullResult();
+    }
 }

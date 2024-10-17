@@ -24,10 +24,10 @@ class Medecin
     private string $adresse;
 
     #[ORM\Column(type: Types::STRING, length: 15, nullable: true)]
-    private ?string $tel = null;
+    private string $tel;
 
     #[ORM\Column(type: Types::STRING, length: 50, nullable: true)]
-    private ?string $specialitecomplementaire = null;
+    private string $specialitecomplementaire;
 
     #[ORM\Column(type: Types::INTEGER)]
     private int $departement;
