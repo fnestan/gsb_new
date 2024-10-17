@@ -70,10 +70,11 @@ class ReportController extends AbstractController
         }
         $token = str_replace('Bearer ', '', $authorizationHeader);
         $tokenIsValid = $this->tokenGenerator->validateToken($token);
+        $tokenIsBlacklisted = $this->tokenGenerator->isBlacklisted($token);
         $visiteurId = $this->tokenGenerator->getClaims($token)["uid"];
         $visitorRepository = $this->entityManager->getRepository(Visiteur::class);
         $visitor = $visitorRepository->find($visiteurId);
-        if (is_null($visitor) || !$tokenIsValid) {
+        if (is_null($visitor) || !$tokenIsValid || $tokenIsBlacklisted) {
             return new JsonResponse(['error' => 'Token manquant ou incorrect ou visiteur inexistant'], 401);
 
         }

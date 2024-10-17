@@ -3,9 +3,6 @@
 namespace App\Service;
 
 use DateTimeImmutable;
-use Lcobucci\JWT\Validation\Constraint\LooseValidAt;
-use Lcobucci\JWT\Validation\Constraint\ValidAt;
-use Lcobucci\Clock\SystemClock;
 use Lcobucci\JWT\Configuration;
 use Lcobucci\JWT\Signer\Hmac\Sha256;
 use Lcobucci\JWT\Validation\Constraint\SignedWith;
@@ -46,20 +43,17 @@ class JwtTokenGenerator
     {
         $token = $this->config->parser()->parse($tokenString);
 
-        // Contrainte de validation : vérification de la signature et de l'expiration
         $constraints = [
             new SignedWith($this->config->signer(), $this->config->signingKey())
         ];
 
-        $edded = $this->config->validator()->validate($token, ...$constraints);
+        $isValid = $this->config->validator()->validate($token, ...$constraints);
 
-        var_dump($edded);
-        die();
         $claims = $token->claims();
 
         if ($claims->has('exp')) {
             $expiration = $claims->get('exp');
-            return $expiration > new DateTimeImmutable();
+            return ($expiration > new DateTimeImmutable() && $isValid);
         } else {
             return false;
         }
@@ -70,5 +64,20 @@ class JwtTokenGenerator
         $token = $this->config->parser()->parse($tokenString);
 
         return $token->claims()->all();
+    }
+
+    function addToBlacklist($tokenString) {
+        $file = 'blacklist.txt';
+        file_put_contents($file, $tokenString . PHP_EOL, FILE_APPEND);
+    }
+
+    function isBlacklisted($tokenString) {
+        $file = 'blacklist.txt';
+        if (file_exists($file)) {
+            $blacklistedTokens = file($file, FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
+            return in_array($tokenString, $blacklistedTokens);
+        }
+
+        return false;
     }
 }

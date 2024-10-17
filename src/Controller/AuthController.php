@@ -40,4 +40,24 @@ class AuthController extends AbstractController
         ];
         return new JsonResponse($response, 200);
     }
+
+    #[Route('/logout', name: 'auth_logout', methods: ['GET'])]
+    public function logout(Request $request)
+    {
+        $authorizationHeader = $request->headers->get('Authorization');
+
+        if (!$authorizationHeader || !str_starts_with($authorizationHeader, 'Bearer ')) {
+            return new JsonResponse(['error' => 'Token manquant ou incorrect'], 401);
+        }
+        $token = str_replace('Bearer ', '', $authorizationHeader);
+        $tokenIsValid = $this->tokenGenerator->validateToken($token);
+        $visiteurId = $this->tokenGenerator->getClaims($token)["uid"];
+        $visitorRepository = $this->entityManager->getRepository(Visiteur::class);
+        $visitor = $visitorRepository->find($visiteurId);
+        if (is_null($visitor) || !$tokenIsValid) {
+            return new JsonResponse(['error' => 'Token manquant ou incorrect ou visiteur inexistant'], 401);
+        }
+        $this->tokenGenerator->addToBlacklist($token);
+        return new JsonResponse([], 204);
+    }
 }
