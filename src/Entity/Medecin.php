@@ -27,7 +27,7 @@ class Medecin
     private string $tel;
 
     #[ORM\Column(type: Types::STRING, length: 50, nullable: true)]
-    private string $specialitecomplementaire;
+    private ?string $specialitecomplementaire;
 
     #[ORM\Column(type: Types::INTEGER)]
     private int $departement;

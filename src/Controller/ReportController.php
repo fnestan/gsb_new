@@ -6,6 +6,7 @@ use App\Entity\Medecin;
 use App\Entity\Rapport;
 use App\Entity\Visiteur;
 use App\Service\JwtTokenGenerator;
+use DateTime;
 use Doctrine\ORM\EntityManagerInterface;
 use Monolog\DateTimeImmutable;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -82,10 +83,7 @@ class ReportController extends AbstractController
         $motive = json_decode($request->getContent())->motive;
         $doctorId = json_decode($request->getContent())->doctorId;
         $date = json_decode($request->getContent())->date;
-        try {
-            $reportDate = new DateTimeImmutable($date);
-        } catch (\Exception $e) {
-        }
+        $reportDate = DateTime::createFromFormat('Y-m-d', $date);
         $doctor = $this->entityManager->getRepository(Medecin::class)->find($doctorId);
         $report = new Rapport();
         $report->setDate($reportDate);
