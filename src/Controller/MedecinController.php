@@ -23,10 +23,13 @@ class MedecinController extends AbstractController
     #[Route('/', name: 'app_doctors', methods: ['GET'])]
     public function getDoctors(Request $request)
     {
-        $page = $request->query->get('page');
-        $element = $request->query->get('element');
+        $page = $request->query->get('page') !== null ? $request->query->get('page') : 1;
+        $element = $request->query->get('element') !== null ? $request->query->get('element') : 10;
         $name = $request->query->get('name');
-        $doctors = $this->entityManager->getRepository(Medecin::class)->findAllDoctorsWithPagination($name, $page, $element);
+        $lastnameOrder = $request->query->get('lastname');
+        $firstnameOrder = $request->query->get('firstname');
+        $doctors = $this->entityManager->getRepository(Medecin::class)->findAllDoctorsWithPagination($name, $page,
+            $element, $lastnameOrder, $firstnameOrder);
         $response = array();
         foreach ($doctors as $doctor) {
             $response['doctors'][] = [

@@ -32,8 +32,6 @@ class Medecin
     #[ORM\Column(type: Types::INTEGER)]
     private int $departement;
 
-    // Ajoutez vos getters et setters ici
-
     public function getId(): int
     {
         return $this->id;

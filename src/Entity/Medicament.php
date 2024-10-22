@@ -1,8 +1,10 @@
 <?php
 
 namespace App\Entity;
+
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
+
 #[ORM\Entity(repositoryClass: "App\Repository\MedicamentRepository")]
 #[ORM\Table(name: "medicament")]
 class Medicament
@@ -11,7 +13,7 @@ class Medicament
     #[ORM\Column(type: Types::STRING, length: 30)]
     private string $id;
 
-    #[ORM\Column(type: Types::STRING, length: 80)]
+    #[ORM\Column(name: "nomCommercial", type: Types::STRING, length: 80)]
     private string $nomCommercial;
 
     #[ORM\ManyToOne(targetEntity: Famille::class)]
@@ -24,7 +26,7 @@ class Medicament
     #[ORM\Column(type: Types::STRING, length: 100)]
     private string $effets;
 
-    #[ORM\Column(type: Types::STRING, length: 100)]
+    #[ORM\Column(name: "contreIndications", type: Types::STRING, length: 100)]
     private string $contreIndications;
 
     public function getId(): string

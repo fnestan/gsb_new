@@ -16,7 +16,8 @@ class MedecinRepository extends ServiceEntityRepository
         parent::__construct($registry, Medecin::class);
     }
 
-    public function findAllDoctorsWithPagination($name = null, int $page = 1, int $limit = 10): Paginator
+    public function findAllDoctorsWithPagination(int $page = 1, int $limit = 10, $lastnameOrder = null,
+                                                     $firstnameOrder = null, $name = null): Paginator
     {
         $offset = ($page - 1) * $limit;
 
@@ -25,11 +26,16 @@ class MedecinRepository extends ServiceEntityRepository
             $query->Where('m.nom LIKE :name')
                 ->setParameter('name', '%' . $name . '%');
         }
+        if (!is_null($firstnameOrder)) {
+            $query->orderBy("m.prenom", strtoupper($firstnameOrder));
+        }
+        if (!is_null($lastnameOrder)) {
+            $query->orderBy("m.nom", strtoupper($lastnameOrder));
+        }
         $query->setFirstResult($offset)
             ->setMaxResults($limit)
             ->getQuery();
 
-        // Utilisation du Paginator de Doctrine
         return new Paginator($query, true);
     }
 

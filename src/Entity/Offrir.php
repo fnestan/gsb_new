@@ -21,7 +21,6 @@ class Offrir
     #[ORM\Column(type: "integer", nullable: true)]
     private int $quantite ;
 
-    // Getters and Setters
     public function getRapport(): ?Rapport
     {
         return $this->rapport;

@@ -42,7 +42,6 @@ class Visiteur
     #[ORM\Column(type: "string", length: 50, nullable: true)]
     private ?string $ticket = null;
 
-    // Getters and Setters
     public function getId(): ?string
     {
         return $this->id;

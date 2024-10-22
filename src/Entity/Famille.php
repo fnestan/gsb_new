@@ -16,7 +16,6 @@ class Famille
     #[ORM\Column(type: Types::STRING, length: 80)]
     private string $libelle;
 
-    // Ajoutez vos getters et setters ici
     public function getId(): string
     {
         return $this->id;

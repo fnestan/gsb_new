@@ -33,7 +33,7 @@ class AuthController extends AbstractController
         $password = json_decode($request->getContent())->password;
         $visitor = $this->entityManager->getRepository(Visiteur::class)->findByVisitorByLoginAndPassword($login, $password);
         if (is_null($visitor)) {
-            return new JsonResponse(["error" => "Login ou mot de passe incorrecte"], 400);
+            return new JsonResponse(["error" => "Login ou mot de passe incorrect"], 400);
         }
         $token = $this->tokenGenerator->generateToken(["id" => $visitor->getId(),
             "login" => $visitor->getLogin()]);

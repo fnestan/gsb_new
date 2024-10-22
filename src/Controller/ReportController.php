@@ -3,6 +3,8 @@
 namespace App\Controller;
 
 use App\Entity\Medecin;
+use App\Entity\Medicament;
+use App\Entity\Offrir;
 use App\Entity\Rapport;
 use App\Entity\Visiteur;
 use App\Service\JwtTokenGenerator;
@@ -55,8 +57,16 @@ class ReportController extends AbstractController
             "date" => $report->getDate()->format('Y-m-d'),
             "motive" => $report->getMotif(),
             "balance sheet" => $report->getBilan(),
-            "doctor" => $report->getMedecin() ? $report->getMedecin()->getPrenom() . " "
-                . $report->getMedecin()->getNom() : " "
+            "visitor" => [
+                "id" => $report->getVisiteur()->getId(),
+                "lastname" => $report->getVisiteur()->getNom(),
+                "firstname" => $report->getVisiteur()->getPrenom(),
+            ],
+            "doctor" => [
+                "id" => $report->getMedecin() !== null ? $report->getMedecin()->getId() : "",
+                "lastanme" => $report->getMedecin() !== null ? $report->getMedecin()->getNom() : "",
+                "firstname" => $report->getMedecin() !== null ? $report->getMedecin()->getPrenom() : "",
+            ]
         ];
         return new JsonResponse($response, 200);
     }
@@ -84,7 +94,13 @@ class ReportController extends AbstractController
         $doctorId = json_decode($request->getContent())->doctorId;
         $date = json_decode($request->getContent())->date;
         $reportDate = DateTime::createFromFormat('Y-m-d', $date);
+        $medicineId = json_decode($request->getContent())->medicineId;
+        $quantity = json_decode($request->getContent())->quantity;
         $doctor = $this->entityManager->getRepository(Medecin::class)->find($doctorId);
+        $medicine = $this->entityManager->getRepository(Medicament::class)->find($medicineId);
+        if (is_null($medicine)) {
+            return new JsonResponse(['data' => "Ce médicament n'existe pas"], 400);
+        }
         $report = new Rapport();
         $report->setDate($reportDate);
         $report->setBilan($balanceSheet);
@@ -92,7 +108,12 @@ class ReportController extends AbstractController
         $report->setMotif($motive);
         $report->setVisiteur($visitor);
         $this->entityManager->persist($report);
+        $offer = new Offrir();
+        $offer->setMedicament($medicine);
+        $offer->setQuantite($quantity);
+        $offer->setRapport($report);
+        $this->entityManager->persist($offer);
         $this->entityManager->flush();
-        return new JsonResponse(['data' => 'rapport crée'], 201);
+        return new JsonResponse(['data' => 'Le rapport a été crée'], 201);
     }
 }
