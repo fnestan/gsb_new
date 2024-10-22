@@ -28,8 +28,8 @@ class MedecinController extends AbstractController
         $name = $request->query->get('name');
         $lastnameOrder = $request->query->get('lastname');
         $firstnameOrder = $request->query->get('firstname');
-        $doctors = $this->entityManager->getRepository(Medecin::class)->findAllDoctorsWithPagination($name, $page,
-            $element, $lastnameOrder, $firstnameOrder);
+        $doctors = $this->entityManager->getRepository(Medecin::class)->findAllDoctorsWithPagination($page,
+            $element, $lastnameOrder, $firstnameOrder, $name);
         $response = array();
         foreach ($doctors as $doctor) {
             $response['doctors'][] = [
