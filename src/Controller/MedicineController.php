@@ -3,7 +3,6 @@
 namespace App\Controller;
 
 use App\Entity\Medicament;
-use App\Repository\MedicamentRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\JsonResponse;
@@ -23,10 +22,10 @@ class MedicineController extends AbstractController
     #[Route('/', name: 'app_medicines', methods: ['GET'])]
     public function getMedicines(Request $request)
     {
-        $page = $request->query->get('page') !== null ? $request->query->get('page') : 1;
-        $element = $request->query->get('element') !== null ? $request->query->get('element') : 10;
+        $page = $request->query->get('page') ;
+        $element = $request->query->get('element');
         $name = $request->query->get('name');
-        $nameOrder = $request->query->get('order_name') !== null ? $request->query->get('order_name') : 'asc';
+        $nameOrder = $request->query->get('order_name');
 
         $medicines = $this->entityManager->getRepository(Medicament::class)->findAllMedicinesWithPagination($page,
             $element, $nameOrder, $name);
@@ -43,8 +42,8 @@ class MedicineController extends AbstractController
 
             ];
         }
-        $response["currentPage"] = $page;
-        $response["totalPages"] = ceil(count($medicines) / $element);
+        $response["currentPage"] = $page !== null ? $page : 1;
+        $response["totalPages"] = $element!== null ? ceil(count($medicines)/$element) : 1;
         return new JsonResponse($response, 200);
     }
 }

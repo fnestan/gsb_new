@@ -16,8 +16,8 @@ class MedicamentRepository extends ServiceEntityRepository
         parent::__construct($registry, Medicament::class);
     }
 
-    public function findAllMedicinesWithPagination(int $page, int $limit,
-                                                       $nameOrder, $name = null): Paginator
+    public function findAllMedicinesWithPagination(int $page = null, int $limit = null,
+                                                       $nameOrder = null, $name = null): Paginator
     {
         $offset = ($page - 1) * $limit;
 
@@ -29,9 +29,15 @@ class MedicamentRepository extends ServiceEntityRepository
         if (!is_null($nameOrder)) {
             $query->orderBy("m.nomCommercial", strtoupper($nameOrder));
         }
-        $query->setFirstResult($offset)
-            ->setMaxResults($limit)
-            ->getQuery();
+        if (is_null($limit) && is_null($offset)) {
+            $query->getQuery();
+
+        } else {
+            $query->setFirstResult($offset)
+                ->setMaxResults($limit)
+                ->getQuery();
+        }
+
 
         return new Paginator($query, true);
     }
