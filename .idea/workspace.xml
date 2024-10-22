@@ -4,21 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e0fc2c04-e06a-4eaa-958e-d0ba296e6ccd" name="Changes" comment="ext-pdo_sqlite">
-      <change afterPath="$PROJECT_DIR$/src/Controller/MedicineController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
+    <list default="true" id="e0fc2c04-e06a-4eaa-958e-d0ba296e6ccd" name="Changes" comment="correction">
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/phpspec.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/phpspec.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Procfile" beforeDir="false" afterPath="$PROJECT_DIR$/Procfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/AuthController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/AuthController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/MedecinController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/MedecinController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/ReportController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/ReportController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/Famille.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Famille.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/Medecin.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Medecin.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/Medicament.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Medicament.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/Offrir.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Offrir.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/Visiteur.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Visiteur.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Repository/MedecinRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/MedecinRepository.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Repository/MedicamentRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/MedicamentRepository.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/var/data/gsbrapports.db" beforeDir="false" afterPath="$PROJECT_DIR$/var/data/gsbrapports.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/MedicineController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/MedicineController.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,6 +33,7 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/config/packages/nelmio_api_doc.yaml" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/var/log/dev.log" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="PhpWorkspaceProjectConfiguration" interpreter_name="/bin/php">
@@ -241,7 +237,7 @@
       <workItem from="1729548022421" duration="881000" />
       <workItem from="1729552952640" duration="6249000" />
       <workItem from="1729563695092" duration="2588000" />
-      <workItem from="1729603213200" duration="7577000" />
+      <workItem from="1729603213200" duration="12554000" />
     </task>
     <task id="LOCAL-00001" summary="init project">
       <option name="closed" value="true" />
@@ -355,7 +351,15 @@
       <option name="project" value="LOCAL" />
       <updated>1729566101694</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="correction">
+      <option name="closed" value="true" />
+      <created>1729611078472</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1729611078472</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -379,6 +383,7 @@
     <MESSAGE value="fix date" />
     <MESSAGE value="sqlite" />
     <MESSAGE value="procfile" />
-    <option name="LAST_COMMIT_MESSAGE" value="procfile" />
+    <MESSAGE value="correction" />
+    <option name="LAST_COMMIT_MESSAGE" value="correction" />
   </component>
 </project>

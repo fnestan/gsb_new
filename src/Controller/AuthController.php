@@ -4,13 +4,11 @@ namespace App\Controller;
 
 use App\Entity\Visiteur;
 use App\Service\JwtTokenGenerator;
-use App\Service\MailService;
 use Doctrine\ORM\EntityManagerInterface;
-use Random\RandomException;
+use OpenApi\Attributes as OA;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
-use Symfony\Component\Mailer\Exception\TransportExceptionInterface;
 use Symfony\Component\Routing\Annotation\Route;
 
 #[Route('auth')]
@@ -24,8 +22,6 @@ class AuthController extends AbstractController
         $this->tokenGenerator = $tokenGenerator;
         $this->entityManager = $entityManager;
     }
-
-
     #[Route('/login', name: 'auth_login', methods: ['POST'])]
     public function login(Request $request): JsonResponse
     {

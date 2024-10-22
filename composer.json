@@ -6,8 +6,8 @@
   "require": {
     "php": ">=8.2",
     "ext-ctype": "*",
-    "ext-pdo_sqlite": "*",
     "ext-iconv": "*",
+    "ext-pdo_sqlite": "*",
     "doctrine/dbal": "^3",
     "doctrine/doctrine-bundle": "^2.13",
     "doctrine/doctrine-migrations-bundle": "^3.3",
