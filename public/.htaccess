@@ -13,12 +13,17 @@
 </IfModule>
 
 # Block access to sensitive directories
-<Directory "/path/to/your/symfony/app/var">
+<Directory "../var">
     Order allow,deny
     Deny from all
 </Directory>
 
-<Directory "/path/to/your/symfony/app/vendor">
+<Directory "../vendor">
     Order allow,deny
     Deny from all
 </Directory>
+
+<Directory "../public">
+    Require all granted
+</Directory>
+
