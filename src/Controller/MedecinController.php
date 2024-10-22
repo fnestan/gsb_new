@@ -10,7 +10,7 @@ use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
 
-#[Route('doctors')]
+#[Route('/doctors')]
 class MedecinController extends AbstractController
 {
     private EntityManagerInterface $entityManager;
