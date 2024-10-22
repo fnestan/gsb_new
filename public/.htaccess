@@ -13,17 +13,4 @@
 </IfModule>
 
 # Block access to sensitive directories
-<Directory "../var">
-    Order allow,deny
-    Deny from all
-</Directory>
-
-<Directory "../vendor">
-    Order allow,deny
-    Deny from all
-</Directory>
-
-<Directory "../public">
-    Require all granted
-</Directory>
 
