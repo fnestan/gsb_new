@@ -4,11 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e0fc2c04-e06a-4eaa-958e-d0ba296e6ccd" name="Changes" comment="routes">
-      <change beforePath="$PROJECT_DIR$/.idea/phpspec.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/phpspec.xml" afterDir="false" />
+    <list default="true" id="e0fc2c04-e06a-4eaa-958e-d0ba296e6ccd" name="Changes" comment="fix date">
+      <change afterPath="$PROJECT_DIR$/var/data/gsbrapports.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/ReportController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/ReportController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/Medecin.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Medecin.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/MedecinController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/MedecinController.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -175,7 +178,7 @@
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/home/frantznestan/projects/gsb_new&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/frantznestan/projects/articles&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -225,6 +228,8 @@
       <workItem from="1729151486827" duration="3034000" />
       <workItem from="1729155792034" duration="1310000" />
       <workItem from="1729157611646" duration="2815000" />
+      <workItem from="1729548022421" duration="881000" />
+      <workItem from="1729552952640" duration="4318000" />
     </task>
     <task id="LOCAL-00001" summary="init project">
       <option name="closed" value="true" />
@@ -250,7 +255,15 @@
       <option name="project" value="LOCAL" />
       <updated>1729154418194</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="fix date">
+      <option name="closed" value="true" />
+      <created>1729208193078</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1729208193078</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -260,6 +273,7 @@
     <MESSAGE value="init project" />
     <MESSAGE value="logout" />
     <MESSAGE value="routes" />
-    <option name="LAST_COMMIT_MESSAGE" value="routes" />
+    <MESSAGE value="fix date" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix date" />
   </component>
 </project>
