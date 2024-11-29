@@ -7,7 +7,6 @@
     <list default="true" id="e0fc2c04-e06a-4eaa-958e-d0ba296e6ccd" name="Changes" comment="correction mineurs">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/ReportController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/ReportController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/var/data/gsbrapports.db" beforeDir="false" afterPath="$PROJECT_DIR$/var/data/gsbrapports.db" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -236,7 +235,7 @@
       <workItem from="1729637402145" duration="3026000" />
       <workItem from="1729700547552" duration="34000" />
       <workItem from="1730107409486" duration="644000" />
-      <workItem from="1732871003441" duration="1409000" />
+      <workItem from="1732871003441" duration="2614000" />
     </task>
     <task id="LOCAL-00001" summary="init project">
       <option name="closed" value="true" />
