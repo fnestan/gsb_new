@@ -51,6 +51,7 @@ class ReportController extends AbstractController
     #[Route('/{id}', name: 'app_report', methods: ['GET'])]
     public function getReportBYid($id)
     {
+        sleep(300);
         $report = $this->entityManager->getRepository(Rapport::class)->find($id);
         $response = [
             "id" => $report->getId(),

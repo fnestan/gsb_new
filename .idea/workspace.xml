@@ -4,10 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e0fc2c04-e06a-4eaa-958e-d0ba296e6ccd" name="Changes" comment="correction">
+    <list default="true" id="e0fc2c04-e06a-4eaa-958e-d0ba296e6ccd" name="Changes" comment="correction mineurs">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/MedicineController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/MedicineController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Repository/MedicamentRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/MedicamentRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/ReportController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/ReportController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/data/gsbrapports.db" beforeDir="false" afterPath="$PROJECT_DIR$/var/data/gsbrapports.db" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -233,7 +233,10 @@
       <workItem from="1729563695092" duration="2588000" />
       <workItem from="1729603213200" duration="12554000" />
       <workItem from="1729623754481" duration="611000" />
-      <workItem from="1729637402145" duration="1517000" />
+      <workItem from="1729637402145" duration="3026000" />
+      <workItem from="1729700547552" duration="34000" />
+      <workItem from="1730107409486" duration="644000" />
+      <workItem from="1732871003441" duration="1409000" />
     </task>
     <task id="LOCAL-00001" summary="init project">
       <option name="closed" value="true" />
@@ -355,7 +358,15 @@
       <option name="project" value="LOCAL" />
       <updated>1729611078472</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="correction mineurs">
+      <option name="closed" value="true" />
+      <created>1729639178316</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1729639178316</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -380,6 +391,7 @@
     <MESSAGE value="sqlite" />
     <MESSAGE value="procfile" />
     <MESSAGE value="correction" />
-    <option name="LAST_COMMIT_MESSAGE" value="correction" />
+    <MESSAGE value="correction mineurs" />
+    <option name="LAST_COMMIT_MESSAGE" value="correction mineurs" />
   </component>
 </project>
