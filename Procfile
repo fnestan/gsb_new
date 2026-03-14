@@ -1,1 +1,1 @@
-web: symfony server:start --no-tls --port=${PORT:-8000} --host=0.0.0.0
+web: vendor/bin/heroku-php-apache2 public/
