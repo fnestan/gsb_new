@@ -30,8 +30,8 @@ class ReportController extends AbstractController
     #[Route('/', name: 'app_reports', methods: ['GET'])]
     public function getReports(Request $request)
     {
-        $page = $request->query->get('page');
-        $element = $request->query->get('element');
+        $page = $request->query->get('page') !== null ? $request->query->get('page') : 1;
+        $element = $request->query->get('element') !== null ? $request->query->get('element') : 10;
         $reports = $this->entityManager->getRepository(Rapport::class)->findAllReportsWithPagination($page, $element);
         $response = array();
         foreach ($reports as $report) {
