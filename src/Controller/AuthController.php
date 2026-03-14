@@ -5,7 +5,6 @@ namespace App\Controller;
 use App\Entity\Visiteur;
 use App\Service\JwtTokenGenerator;
 use Doctrine\ORM\EntityManagerInterface;
-use OpenApi\Attributes as OA;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
