@@ -16,7 +16,7 @@ use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
 
-#[Route('reports')]
+#[Route('rapport')]
 class ReportController extends AbstractController
 {
     private JwtTokenGenerator $tokenGenerator;

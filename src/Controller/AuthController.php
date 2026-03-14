@@ -11,7 +11,7 @@ use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
 
-#[Route('auth')]
+#[Route('')]
 class AuthController extends AbstractController
 {
     private JwtTokenGenerator $tokenGenerator;
@@ -22,7 +22,7 @@ class AuthController extends AbstractController
         $this->tokenGenerator = $tokenGenerator;
         $this->entityManager = $entityManager;
     }
-    #[Route('/login', name: 'auth_login', methods: ['POST'])]
+    #[Route('/connexion', name: 'auth_login', methods: ['POST'])]
     public function login(Request $request): JsonResponse
     {
         $login = json_decode($request->getContent())->login;
@@ -39,7 +39,7 @@ class AuthController extends AbstractController
         return new JsonResponse($response, 200);
     }
 
-    #[Route('/logout', name: 'auth_logout', methods: ['GET'])]
+    #[Route('/deconnexion', name: 'auth_logout', methods: ['GET'])]
     public function logout(Request $request)
     {
         $authorizationHeader = $request->headers->get('Authorization');
